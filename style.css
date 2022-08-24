@@ -253,8 +253,20 @@ section {
 
 .menu {
     position: fixed;
-    max-width: 60rem;
     z-index: 2;
+    pointer-events: none;
+}
+
+
+@media(min-width: 768px) {
+    .menu {
+        max-width: 60rem;
+    }
+}
+@media(max-width: 767px) {
+    .menu {
+        width: 100%;
+    }
 }
 
 .menu__wrapper, .menu::before, .menu::after {
@@ -309,6 +321,13 @@ section {
     z-index: 1;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
+body.menu-open .menu {
+    pointer-events: auto;
+}
 
 body.menu-open .menu__wrapper, body.menu-open .menu::before, body.menu-open .menu::after  {
     transform: translateX(-100%);
@@ -410,6 +429,7 @@ svg.spiral rect:hover {
 @media(min-width: 320px) {
     .service__item {
         width: 100%;
+        min-height: 25rem;
     }
 }
 
