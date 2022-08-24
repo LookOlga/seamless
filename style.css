@@ -51,7 +51,7 @@ a:hover {
     color: var(--highlight-color);
 }
 
-.illustr {
+.intro {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +61,9 @@ a:hover {
 
     background-image: url('assets/grid.svg');
     background-position: center center;
+}
 
+.intro__img {
     transform: translateX(0);
     transition: transform 0.5s;
 }
@@ -73,9 +75,14 @@ a:hover {
     align-items: center;
 }
 
-.logo h1 {
+.logo {
     font-size: 20px;
     line-height: 1;
+}
+
+.logo__link {
+    display: flex;
+    align-items: center;
 }
 
 .logo__icon {
