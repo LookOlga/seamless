@@ -8,6 +8,7 @@
     --main-color: #fff;
     --text-color: #000;
     --highlight-color: #2727e6;
+    --card-bg: #f2f2f2;
 }
 
 html {
@@ -21,6 +22,7 @@ body.dark-mode {
     --main-color: #000;
     --text-color: #fff;
     --highlight-color: #ff4141;
+    --card-bg: #111;
 }
 
 * {
@@ -32,7 +34,7 @@ body.dark-mode {
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 2.4rem;
+    font-size: 2rem;
     line-height: 1.5;
 
     background-color: var(--main-color);
@@ -66,6 +68,11 @@ a:hover {
     padding: 0 3.2rem;
 }
 
+section {
+    background-image: url('assets/grid.svg');
+    background-position: center center;
+}
+
 .intro {
     display: flex;
     justify-content: center;
@@ -73,9 +80,6 @@ a:hover {
 
     width: 100%;
     min-height: 100vh;
-
-    background-image: url('assets/grid.svg');
-    background-position: center center;
 }
 
 .intro__img {
@@ -279,15 +283,60 @@ svg.spiral rect:hover {
     fill-opacity: 0.25;
 }
 
+.service {
+    display: flex;
+    align-items: center;
 
+    min-height: 100vh;
 
-/* @media(prefers-color-scheme: dark) {
-    :root {
-        --main-color: #000;
-        --text-color: #fff;
-        --highlight-color: #ff4141;
+    padding: 7rem 0;
+}
+
+.service__title {
+    font-size: 4.8rem;
+    margin-bottom: 5rem;
+}
+
+.service__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -3rem -6rem;
+}
+
+.service__subtitle {
+    max-width: 32rem;
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+}
+
+.service__item {
+    padding: 3rem;
+    margin: 0 3rem 6rem;
+    border-radius: 5px;
+    border: 2px solid var(--text-color);
+
+    background-color: var(--card-bg);
+    box-shadow: 15px 15px 0 -2px var(--card-bg),
+    15px 15px var(--text-color);
+}
+
+@media(min-width: 320px) {
+    .service__item {
+        width: 100%;
     }
-} */
+}
 
 
+@media(min-width: 576px) {
+    .service__item {
+        width: calc(100% / 2 - 6rem);
+    }
+}
+
+
+@media(min-width: 1024px) {
+    .service__item {
+        width: calc(100% / 3 - 6rem);
+    }
+}
 
