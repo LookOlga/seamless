@@ -63,7 +63,7 @@ a:hover {
     width: 100%;
 
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 3.2rem;
 }
 
 .intro {
@@ -79,8 +79,24 @@ a:hover {
 }
 
 .intro__img {
-    transform: translateX(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     transition: transform 0.5s;
+}
+
+@media(min-width: 1360px) {
+    .intro__img {
+        transform: translateX(0);
+    }
+}
+
+.intro__img svg{
+    max-width: 55rem;
+    width: 100%;
+    max-height: 55rem;
+    height: 100%;
 }
 
 .logo, .dark-mode-toggle, .menu-toggle {
@@ -100,7 +116,7 @@ a:hover {
     align-items: center;
 }
 
-.logo__icon {
+.logo__icon, .menu-toggle__label {
     margin-right: 1rem;
 }
 
@@ -132,6 +148,10 @@ a:hover {
 .menu-toggle {
     right: 3.2rem;
     z-index: 1;
+}
+
+.menu-toggle__label, .dark-mode-toggle__label {
+    font-size: 2rem;
 }
 
 .menu-toggle__icon rect, .dark-mode-toggle__icon circle {
@@ -220,8 +240,16 @@ body.menu-open .menu::after {
     transition-delay: 0s;  
 }
 
-body.menu-open .illustr {
-    transform: translate(-10rem);
+
+
+@media(min-width: 1360px) {
+    body.menu-open .intro__img {
+        transform: translate(-20vw);
+    } 
+}
+
+body.menu-open .dark-mode-toggle{
+    z-index: 0;
 }
 
 .wipe {
