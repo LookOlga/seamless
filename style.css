@@ -116,7 +116,7 @@ a:hover {
     align-items: center;
 }
 
-.logo__icon, .menu-toggle__label {
+.logo__icon, .menu-toggle__label, .dark-mode-toggle__icon{
     margin-right: 1rem;
 }
 
