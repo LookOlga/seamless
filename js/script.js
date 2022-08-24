@@ -2,7 +2,8 @@ const mqDark = window.matchMedia("(prefers-color-scheme: dark)"),
     darkModeToggle = document.querySelector('.dark-mode-toggle'),
     darkModeToggleText = darkModeToggle.querySelector('span'),
     menuToggle = document.querySelector('.menu-toggle'),
-    menuToggleText = menuToggle.querySelector('span');
+    menuToggleText = menuToggle.querySelector('span'),
+    header = document.querySelector('.header');
   
 
 const bodyTag = document.querySelector('body');
@@ -12,6 +13,7 @@ menuToggle.addEventListener('click', () => {
 
     if (bodyTag.classList.contains("menu-open")) {
         menuToggleText.textContent = "Close";
+        header.classList.remove('is-scrolled');
 
         gsap.to(".burger-top", {rotation: 45, transformOrigin: "50% 50%", y: 8});
         gsap.to(".burger-bottom", {rotation: -45, transformOrigin: "50% 50%", y: -8});
@@ -23,6 +25,10 @@ menuToggle.addEventListener('click', () => {
         gsap.to(".burger-top", {rotation: 0, y: 0});
         gsap.to(".burger-bottom", {rotation: 0, y: 0});
         gsap.to(".burger-middle", {width: 28});
+
+        if(window.pageYOffset > 0 && window.innerWidth < 1024) {
+            header.classList.add('is-scrolled');
+        }
     }
 })
 
@@ -90,3 +96,15 @@ spiralTimeline
         duration: 4,
         stagger: -0.25
     })
+
+
+
+window.addEventListener('scroll', () => {
+    if(window.pageYOffset > 0 && window.innerWidth < 1024) {
+        header.classList.add('is-scrolled');
+        darkModeToggle.classList.add('is-scrolled');
+    } else {
+        header.classList.remove('is-scrolled');
+        darkModeToggle.classList.remove('is-scrolled');
+    }
+})
