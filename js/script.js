@@ -96,7 +96,9 @@ const header = document.querySelector('.header');
 window.addEventListener('scroll', () => {
     if(window.pageYOffset > 0 && window.innerWidth < 1024) {
         header.classList.add('is-scrolled');
+        darkModeToggle.classList.add('is-scrolled');
     } else {
         header.classList.remove('is-scrolled');
+        darkModeToggle.classList.remove('is-scrolled');
     }
 })
