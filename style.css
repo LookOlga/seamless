@@ -53,6 +53,8 @@ body {
     line-height: 1.5;
 
     background-color: var(--main-color);
+    background-image: url('assets/grid.svg');
+    background-position: center center;
     color: var(--text-color);
 }
 
@@ -87,11 +89,6 @@ a:hover {
 
     margin: 0 auto;
     padding: 0 3.2rem;
-}
-
-section {
-    background-image: url('assets/grid.svg');
-    background-position: center center;
 }
 
 .overlay {
