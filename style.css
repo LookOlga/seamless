@@ -94,6 +94,20 @@ section {
     background-position: center center;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    transform: translateX(0);
+    transition: transform 0.5s 0.5s;
+}
+
 .header {
     position: fixed;
     top: 0;
@@ -258,12 +272,12 @@ section {
 }
 
 
-@media(min-width: 768px) {
+@media(min-width: 769px) {
     .menu {
         max-width: 60rem;
     }
 }
-@media(max-width: 767px) {
+@media(max-width: 768px) {
     .menu {
         width: 100%;
     }
@@ -329,8 +343,12 @@ body.menu-open .menu {
     pointer-events: auto;
 }
 
-body.menu-open .menu__wrapper, body.menu-open .menu::before, body.menu-open .menu::after  {
+body.menu-open .menu__wrapper, body.menu-open .menu::before, body.menu-open .menu::after, body.menu-open .overlay  {
     transform: translateX(-100%);
+}
+
+body.menu-open .overlay {
+    transition-delay: 0.3s;
 }
 
 body.menu-open .menu__wrapper {
@@ -344,8 +362,6 @@ body.menu-open .menu::before{
 body.menu-open .menu::after {
     transition-delay: 0s;  
 }
-
-
 
 @media(min-width: 1360px) {
     body.menu-open .intro__wrapper {
@@ -383,8 +399,6 @@ svg.spiral rect {
 svg.spiral rect:hover {
     fill-opacity: 0.25;
 }
-
-
 
 .service {
     display: flex;
@@ -451,3 +465,8 @@ svg.spiral rect:hover {
     }
 }
 
+@media(max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+}
