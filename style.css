@@ -73,6 +73,28 @@ section {
     background-position: center center;
 }
 
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 3.2rem;
+
+    z-index: 3;
+    transition: background-color 0.2s;
+}
+
+.header.is-scrolled {
+    background-color: var(--main-color);
+    border-bottom: 2px solid var(--text-color);
+}
+
+
 .intro {
     position: relative;
 
@@ -132,9 +154,11 @@ section {
     height: 100%;
 }
 
-.logo, .dark-mode-toggle, .menu-toggle {
+ .dark-mode-toggle {
     position: fixed;
+}
 
+.logo, .dark-mode-toggle, .menu-toggle {
     display: flex;
     align-items: center;
 }
@@ -174,12 +198,12 @@ section {
     transform: scale(1.75);
 }
 
-.dark-mode-toggle, .logo {
+.dark-mode-toggle {
     left: 3.2rem;
 }
 
 .menu-toggle {
-    right: 3.2rem;
+    /* right: 3.2rem; */
     z-index: 1;
 }
 
@@ -195,13 +219,14 @@ section {
     stroke: currentColor;
 }
 
-.menu-toggle, .logo {
+/* .menu-toggle, .logo {
     top: 3.2rem;
-}
+} */
 
 .menu {
     position: fixed;
     max-width: 60rem;
+    z-index: 2;
 }
 
 .menu__wrapper, .menu::before, .menu::after {

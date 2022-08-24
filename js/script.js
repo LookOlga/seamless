@@ -90,3 +90,13 @@ spiralTimeline
         duration: 4,
         stagger: -0.25
     })
+
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+    if(window.pageYOffset > 0 && window.innerWidth < 1024) {
+        header.classList.add('is-scrolled');
+    } else {
+        header.classList.remove('is-scrolled');
+    }
+})
