@@ -10,6 +10,13 @@
     --highlight-color: #2727e6;
 }
 
+html {
+    font-size: 10px;
+    @media(min-width: 1921px) {
+        font-size: 0.5vw;
+    }
+}
+
 body.dark-mode {
     --main-color: #000;
     --text-color: #fff;
@@ -25,7 +32,7 @@ body.dark-mode {
 body {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 2.4rem;
     line-height: 1.5;
 
     background-color: var(--main-color);
@@ -49,6 +56,14 @@ a {
 
 a:hover {
     color: var(--highlight-color);
+}
+
+.container {
+    max-width: 144rem;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .intro {
@@ -76,7 +91,7 @@ a:hover {
 }
 
 .logo {
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 1;
 }
 
@@ -86,7 +101,7 @@ a:hover {
 }
 
 .logo__icon {
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 
 .logo__icon rect {
@@ -94,7 +109,7 @@ a:hover {
 }
 
 .dark-mode-toggle {
-    bottom: 32px;
+    bottom: 3.2rem;
     z-index: 1;
 }
 
@@ -111,11 +126,11 @@ a:hover {
 }
 
 .dark-mode-toggle, .logo {
-    left: 32px;
+    left: 3.2rem;
 }
 
 .menu-toggle {
-    right: 32px;
+    right: 3.2rem;
     z-index: 1;
 }
 
@@ -128,12 +143,12 @@ a:hover {
 }
 
 .menu-toggle, .logo {
-    top: 32px;
+    top: 3.2rem;
 }
 
 .menu {
     position: fixed;
-    max-width: 600px;
+    max-width: 60rem;
 }
 
 .menu__wrapper, .menu::before, .menu::after {
@@ -159,7 +174,7 @@ a:hover {
 
 .menu__wrapper {
     justify-content: space-between;
-    padding: 48px;
+    padding: 4.8rem;
 
     background-color: var(--main-color);
     z-index: 3;
@@ -171,8 +186,8 @@ a:hover {
 }
 
 .menu__item {
-    font-size: 48px;
-    line-height: 64px;
+    font-size: 4.8rem;
+    line-height: 6.4rem;
 }
 
 
@@ -206,7 +221,7 @@ body.menu-open .menu::after {
 }
 
 body.menu-open .illustr {
-    transform: translate(-100px);
+    transform: translate(-10rem);
 }
 
 .wipe {
