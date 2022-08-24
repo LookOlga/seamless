@@ -349,6 +349,8 @@ svg.spiral rect:hover {
     background-color: var(--card-bg);
     box-shadow: 15px 15px 0 -2px var(--card-bg),
     15px 15px var(--text-color);
+
+    transition: transform 0.2s;
 }
 
 
@@ -369,6 +371,10 @@ svg.spiral rect:hover {
 @media(min-width: 1024px) {
     .service__item {
         width: calc(100% / 3 - 6rem);
+    }
+
+    .service__item:hover {
+        transform: translate(-0.5rem, -1rem) rotate(-3deg);
     }
 }
 
