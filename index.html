@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <div class="preloader">
+
+    </div>
     <header class="header">
             <h1 class="logo">
                 <a href="/" class="logo__link">
@@ -39,10 +42,10 @@
                     <a href="#" class="menu__link">About</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Blog</a>
+                    <a href="#service" class="menu__link">Services</a>
                 </li>
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Investments</a>
+                    <a href="#blog" class="menu__link">Blog</a>
                 </li>
             </ul>
             <ul class="socials">
@@ -61,70 +64,117 @@
 
     <div class="wipe"></div>
 
-    <section class="intro">
+ <main>
+        <section class="intro">
+    
+            <btn href="#" class="dark-mode-toggle">
+                <svg class="dark-mode-toggle__icon" width="64" height="40" viewBox="0 0 64 40" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="9" width="46" height="22" rx="11" stroke="black" stroke-width="2" />
+                    <circle cx="19" cy="20" r="6" fill="black" fill-opacity="0.5" />
+                    <g transform="translate(19, 20)" class="toggle">
+                        <circle cx="0" cy="0" r="6" fill="black" />
+                    </g>
+                    <circle cx="43" cy="20" r="6" fill="black" fill-opacity="0.5" />
+                </svg>
+                <span class="dark-mode-toggle__label">Dark mode</span>
+            </btn>
+           
+    
+            <div class="intro__container container">
+               <div class="intro__wrapper">
+                    <h2 class="intro__title">Software development</h2>
+                    <div class="intro__img">
+                        <svg class="spiral" viewBox="0 0 544 544" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="18.4778" y="125.629" width="414" height="414" transform="rotate(-15 18.4778 125.629)"
+                                stroke="black" stroke-width="2" />
+                            <rect x="129" y="129" width="289" height="289" stroke="black" stroke-width="2" />
+                            <rect x="216.139" y="175.245" width="158" height="158" transform="rotate(15 216.139 175.245)"
+                                stroke="black" stroke-width="2" />
+                            <rect x="257" y="257" width="30" height="30" stroke="black" stroke-width="2" />
+                        </svg>
+                    </div>
+               </div>
+            </div>
+        </section>
+    
+        <section class="service" id="service">
+            <div class="container">
+                <h2 class="service__title section-title">Our services</h2>
+                <ul class="service__list list">
+                    <li class="service__item card">
+                        <h3 class="service__subtitle card__title">Software development</h3>
+                        <p class="service__desc">Development of programs and software systems</p>
+                    </li>
+                    <li class="service__item card">
+                        <h3 class="service__subtitle card__title">Software development and support</h3>
+                        <p class="service__desc">Refinement of existing code and its support</p>
+                    </li>
+                    <li class="service__item card">
+                        <h3 class="service__subtitle card__title">Porting code to a new platform</h3>
+                        <p class="service__desc">Rewriting the old code in accordance with modern technologies</p>
+                    </li>
+                    <li class="service__item card">
+                        <h3 class="service__subtitle card__title">2D/3D data visualization</h3>
+                        <p class="service__desc">Graphs, visual editors, visual presentation of data</p>
+                    </li>
+                    <li class="service__item card">
+                        <h3 class="service__subtitle card__title">Neural networks</h3>
+                        <p class="service__desc">Using pre-trained neural networks, machine learning from scratch for your task</p>
+                    </li>
+                    <li class="service__item card">
+                        <h3 class="service__subtitle card__title">Computer vision</h3>
+                        <p class="service__desc">Face recognition, object tracking, video stream processing</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-        <btn href="#" class="dark-mode-toggle">
-            <svg class="dark-mode-toggle__icon" width="64" height="40" viewBox="0 0 64 40" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="8" y="9" width="46" height="22" rx="11" stroke="black" stroke-width="2" />
-                <circle cx="19" cy="20" r="6" fill="black" fill-opacity="0.5" />
-                <g transform="translate(19, 20)" class="toggle">
-                    <circle cx="0" cy="0" r="6" fill="black" />
-                </g>
-                <circle cx="43" cy="20" r="6" fill="black" fill-opacity="0.5" />
-            </svg>
-            <span class="dark-mode-toggle__label">Dark mode</span>
-        </btn>
-       
-
-        <div class="intro__container container">
-           <div class="intro__wrapper">
-                <h2 class="intro__title">Software development</h2>
-                <div class="intro__img">
-                    <svg class="spiral" viewBox="0 0 544 544" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="18.4778" y="125.629" width="414" height="414" transform="rotate(-15 18.4778 125.629)"
-                            stroke="black" stroke-width="2" />
-                        <rect x="129" y="129" width="289" height="289" stroke="black" stroke-width="2" />
-                        <rect x="216.139" y="175.245" width="158" height="158" transform="rotate(15 216.139 175.245)"
-                            stroke="black" stroke-width="2" />
-                        <rect x="257" y="257" width="30" height="30" stroke="black" stroke-width="2" />
-                    </svg>
-                </div>
-           </div>
-        </div>
-    </section>
-
-    <section class="service">
-        <div class="container">
-            <h2 class="service__title">Our services</h2>
-            <ul class="service__list">
-                <li class="service__item">
-                    <h3 class="service__subtitle">Software development</h3>
-                    <p class="service__desc">Development of programs and software systems</p>
-                </li>
-                <li class="service__item">
-                    <h3 class="service__subtitle">Software development and support</h3>
-                    <p class="service__desc">Refinement of existing code and its support</p>
-                </li>
-                <li class="service__item">
-                    <h3 class="service__subtitle">Porting code to a new platform</h3>
-                    <p class="service__desc">Rewriting the old code in accordance with modern technologies</p>
-                </li>
-                <li class="service__item">
-                    <h3 class="service__subtitle">2D/3D data visualization</h3>
-                    <p class="service__desc">Graphs, visual editors, visual presentation of data</p>
-                </li>
-                <li class="service__item">
-                    <h3 class="service__subtitle">Neural networks</h3>
-                    <p class="service__desc">Using pre-trained neural networks, machine learning from scratch for your task</p>
-                </li>
-                <li class="service__item">
-                    <h3 class="service__subtitle">Computer vision</h3>
-                    <p class="service__desc">Face recognition, object tracking, video stream processing</p>
-                </li>
-            </ul>
-        </div>
-    </section>
+        <section class="blog" id="blog">
+            <div class="container">
+                <h2 class="blog__title section-title">Blog</h2>
+                <ul class="blog__list list">
+                    <li class="blog__item card card--img">
+                       <a class="card__img-link" href="#">
+                            <picture>
+                                <!-- <source media='(min-width: 320px)' srcset="'large.jpg' 1024px, 'medium.jpg 640px, small.jpg 320px"/> -->
+                                <source srcset="img/blog/ai_2x.jpg 2x, img/blog/ai.jpg 1x"/>
+                                <img src="img/blog/ai.jpg" alt="artificial-intelligence">
+    						</picture>
+                       </a>
+                        <h3 class="blog__subtitle card__title">
+                            <a href="#">What is AI?</a>
+                        </h3>
+                        <p class="blog__desc">An executive guide to artificial intelligence, from machine learning and general AI to neural networks.</p>
+                    </li>
+                    <li class="blog__item card card--img">
+                     <a class="card__img-link" href="#">
+                        <picture>
+                            <source srcset="img/blog/neural_network_2x.jpg 2x, img/blog/neural_network.jpg 1x"/>
+                            <img src="img/blog/neural_network.jpg" alt="neural-network">
+                        </picture>
+                     </a>
+                        <h3 class="blog__subtitle card__title">
+                            <a href="#">Explained: Neural networks</a>
+                        </h3>
+                        <p class="blog__desc">Ballyhooed artificial-intelligence technique known as “deep learning” revives 70-year-old idea.</p>
+                    </li>
+                    <li class="blog__item card card--img">
+                       <a class="card__img-link" href="#">
+                            <picture>
+                                <source srcset="img/blog/machine_learning_2x.jpg 2x, img/blog/machine_learning.jpg 1x"/>
+                                <img src="img/blog/machine_learning.jpg" alt="machine-learning">
+    						</picture>
+                       </a>
+                        <h3 class="blog__subtitle card__title">
+                            <a href="#">Why is machine learning important?</a>
+                        </h3>
+                        <p class="blog__desc">Machine learning algorithms use historical data as input to predict new output values.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+ </main>
 
 
     <div class="overlay desktop-only"></div>
