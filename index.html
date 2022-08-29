@@ -7,32 +7,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Seamless</title>
+
+    <style>
+        :root {
+            --main-color: #fff;
+            --text-color: #000;
+            --highlight-color: #2727e6;
+            --card-bg: #f2f2f2;
+        }
+
+
+        body.dark-mode {
+            --main-color: #000;
+            --text-color: #fff;
+            --highlight-color: #ff4141;
+            --card-bg: #111;
+        }
+
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: var(--main-color);
+            color: var(--text-color);
+
+            z-index: 10000;
+
+            transition: 0.2s;
+        }
+
+        .preloader__icon {
+            animation: bounce 2s ease infinite;
+        }
+
+        .preloader__logo {
+            display: flex;
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+
+        body.isLoaded .preloader {
+            opacity: 0;
+            pointer-events: none;
+            z-index: -999;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: scale(1, 1) translateY(0);
+            }
+
+            10% {
+                transform: scale(1.1, .9) translateY(0);
+            }
+
+            30% {
+                transform: scale(.9, 1.1) translateY(-30px);
+            }
+
+            50% {
+                transform: scale(1.05, .95) translateY(0);
+            }
+
+            57% {
+                transform: scale(1, 1) translateY(-7px);
+            }
+
+            64% {
+                transform: scale(1, 1) translateY(0);
+            }
+
+            100% {
+                transform: scale(1, 1) translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="preloader">
-
+        <div href="/" class="preloader__logo logo">
+            <svg class="preloader__icon logo__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="11.5146" y="5.30304" width="24" height="24" transform="rotate(15 11.5146 5.30304)"
+                    fill="#C4C4C4" />
+            </svg>
+            <span class="preloader__label">Seamless</span>
+        </div>
     </div>
     <header class="header">
-            <h1 class="logo">
-                <a href="/" class="logo__link">
-                    <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <rect x="11.5146" y="5.30304" width="24" height="24" transform="rotate(15 11.5146 5.30304)"
-                            fill="#C4C4C4" />
-                    </svg>
-                    <span class="logo__label">Seamless</span>
-                </a>
-            </h1>
-            <btn href="#" class="menu-toggle">
-                <span class="menu-toggle__label">Menu</span>
-                <svg class="menu-toggle__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+        <h1 class="logo">
+            <a href="/" class="logo__link">
+                <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <rect x="6" y="10" width="28" height="4" fill="black" class="burger-top" />
-                    <rect x="6" y="18" width="28" height="4" fill="black" class="burger-middle" />
-                    <rect x="6" y="26" width="28" height="4" fill="black" class="burger-bottom" />
+                    <rect x="11.5146" y="5.30304" width="24" height="24" transform="rotate(15 11.5146 5.30304)"
+                        fill="#C4C4C4" />
                 </svg>
-            </btn>
+                <span class="logo__label">Seamless</span>
+            </a>
+        </h1>
+        <button href="#" class="menu-toggle">
+            <span class="menu-toggle__label">Menu</span>
+            <svg class="menu-toggle__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="6" y="10" width="28" height="4" fill="black" class="burger-top" />
+                <rect x="6" y="18" width="28" height="4" fill="black" class="burger-middle" />
+                <rect x="6" y="26" width="28" height="4" fill="black" class="burger-bottom" />
+            </svg>
+        </button>
     </header>
 
     <nav class="menu">
@@ -64,10 +154,10 @@
 
     <div class="wipe"></div>
 
- <main>
+    <main>
         <section class="intro">
-    
-            <btn href="#" class="dark-mode-toggle">
+
+            <button href="#" class="dark-mode-toggle">
                 <svg class="dark-mode-toggle__icon" width="64" height="40" viewBox="0 0 64 40" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <rect x="8" y="9" width="46" height="22" rx="11" stroke="black" stroke-width="2" />
@@ -78,26 +168,26 @@
                     <circle cx="43" cy="20" r="6" fill="black" fill-opacity="0.5" />
                 </svg>
                 <span class="dark-mode-toggle__label">Dark mode</span>
-            </btn>
-           
-    
+            </button>
+
+
             <div class="intro__container container">
-               <div class="intro__wrapper">
+                <div class="intro__wrapper">
                     <h2 class="intro__title">Software development</h2>
                     <div class="intro__img">
                         <svg class="spiral" viewBox="0 0 544 544" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="18.4778" y="125.629" width="414" height="414" transform="rotate(-15 18.4778 125.629)"
-                                stroke="black" stroke-width="2" />
+                            <rect x="18.4778" y="125.629" width="414" height="414"
+                                transform="rotate(-15 18.4778 125.629)" stroke="black" stroke-width="2" />
                             <rect x="129" y="129" width="289" height="289" stroke="black" stroke-width="2" />
-                            <rect x="216.139" y="175.245" width="158" height="158" transform="rotate(15 216.139 175.245)"
-                                stroke="black" stroke-width="2" />
+                            <rect x="216.139" y="175.245" width="158" height="158"
+                                transform="rotate(15 216.139 175.245)" stroke="black" stroke-width="2" />
                             <rect x="257" y="257" width="30" height="30" stroke="black" stroke-width="2" />
                         </svg>
                     </div>
-               </div>
+                </div>
             </div>
         </section>
-    
+
         <section class="service" id="service">
             <div class="container">
                 <h2 class="service__title section-title">Our services</h2>
@@ -120,7 +210,8 @@
                     </li>
                     <li class="service__item card">
                         <h3 class="service__subtitle card__title">Neural networks</h3>
-                        <p class="service__desc">Using pre-trained neural networks, machine learning from scratch for your task</p>
+                        <p class="service__desc">Using pre-trained neural networks, machine learning from scratch for
+                            your task</p>
                     </li>
                     <li class="service__item card">
                         <h3 class="service__subtitle card__title">Computer vision</h3>
@@ -135,46 +226,50 @@
                 <h2 class="blog__title section-title">Blog</h2>
                 <ul class="blog__list list">
                     <li class="blog__item card card--img">
-                       <a class="card__img-link" href="#">
+                        <a class="card__img-link" href="#">
                             <picture>
                                 <!-- <source media='(min-width: 320px)' srcset="'large.jpg' 1024px, 'medium.jpg 640px, small.jpg 320px"/> -->
-                                <source srcset="img/blog/ai_2x.jpg 2x, img/blog/ai.jpg 1x"/>
+                                <source srcset="img/blog/ai_2x.jpg 2x, img/blog/ai.jpg 1x" />
                                 <img src="img/blog/ai.jpg" alt="artificial-intelligence">
-    						</picture>
-                       </a>
+                            </picture>
+                        </a>
                         <h3 class="blog__subtitle card__title">
                             <a href="#">What is AI?</a>
                         </h3>
-                        <p class="blog__desc">An executive guide to artificial intelligence, from machine learning and general AI to neural networks.</p>
+                        <p class="blog__desc">An executive guide to artificial intelligence, from machine learning and
+                            general AI to neural networks.</p>
                     </li>
                     <li class="blog__item card card--img">
-                     <a class="card__img-link" href="#">
-                        <picture>
-                            <source srcset="img/blog/neural_network_2x.jpg 2x, img/blog/neural_network.jpg 1x"/>
-                            <img src="img/blog/neural_network.jpg" alt="neural-network">
-                        </picture>
-                     </a>
+                        <a class="card__img-link" href="#">
+                            <picture>
+                                <source srcset="img/blog/neural_network_2x.jpg 2x, img/blog/neural_network.jpg 1x" />
+                                <img src="img/blog/neural_network.jpg" alt="neural-network">
+                            </picture>
+                        </a>
                         <h3 class="blog__subtitle card__title">
                             <a href="#">Explained: Neural networks</a>
                         </h3>
-                        <p class="blog__desc">Ballyhooed artificial-intelligence technique known as “deep learning” revives 70-year-old idea.</p>
+                        <p class="blog__desc">Ballyhooed artificial-intelligence technique known as “deep learning”
+                            revives 70-year-old idea.</p>
                     </li>
                     <li class="blog__item card card--img">
-                       <a class="card__img-link" href="#">
+                        <a class="card__img-link" href="#">
                             <picture>
-                                <source srcset="img/blog/machine_learning_2x.jpg 2x, img/blog/machine_learning.jpg 1x"/>
+                                <source
+                                    srcset="img/blog/machine_learning_2x.jpg 2x, img/blog/machine_learning.jpg 1x" />
                                 <img src="img/blog/machine_learning.jpg" alt="machine-learning">
-    						</picture>
-                       </a>
+                            </picture>
+                        </a>
                         <h3 class="blog__subtitle card__title">
                             <a href="#">Why is machine learning important?</a>
                         </h3>
-                        <p class="blog__desc">Machine learning algorithms use historical data as input to predict new output values.</p>
+                        <p class="blog__desc">Machine learning algorithms use historical data as input to predict new
+                            output values.</p>
                     </li>
                 </ul>
             </div>
         </section>
- </main>
+    </main>
 
 
     <div class="overlay desktop-only"></div>
