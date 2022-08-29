@@ -75,6 +75,8 @@ ul {
 }
 
 button {
+    background: none;
+    border: 0;
     cursor: pointer;
 }
 
@@ -217,6 +219,10 @@ section {
 
 .logo__icon rect {
     fill: var(--highlight-color);
+}
+
+.dark-mode-toggle, .menu-toggle {
+    color: var(--text-color);
 }
 
 .dark-mode-toggle {
